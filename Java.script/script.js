@@ -3,7 +3,7 @@
  let sections = document.querySelectorAll('section');
  let navlink = document.querySelectorAll('header nav');
 
-
+ 
  window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
@@ -25,3 +25,16 @@
     menuIcon.classList.toggle('bx-x');
     Navbar.classList.toggle('active');
  }
+
+ <script>
+  const cards = document.querySelectorAll('.education-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove' , function(e) {
+      let x = e.clientX - card.getBoundingClientReact().left;
+      let y = e.clientY - card.getBoundingClientReact().top;
+
+      card.style.setProperty('--x' , x + 'px');
+      card.style.setProperty('--y' , y + 'px');
+    });
+  });
+</script>
